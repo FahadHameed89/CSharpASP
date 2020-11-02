@@ -20,6 +20,8 @@ namespace ASPTestProject.Controllers
 
         // 1 - If we make a new TestPage() and travel to it (Run project -> Add /home/TestPage to end of file extension) you will see a blank page, then an ERROR because we haven't made the page yet. 
 
+        public static List<string> AddedItems = new List<string>();
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -40,10 +42,13 @@ namespace ASPTestProject.Controllers
 
         public IActionResult TestPage(string item)
         {
-            if (item != null)
+            if (!string.IsNullOrWhiteSpace(item))
             {
-                ViewBag.AddedItem = item;
+                AddedItems.Add(item);
             }
+
+            ViewBag.Items = AddedItems;
+
             return View();
         }
 

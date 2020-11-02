@@ -17,10 +17,14 @@
 @*
 *   This is a C# Razor comment. I like it. It's HIDDEN from the user, and won't show up in DOM (via inspect element)
 *@
-@if (ViewBag.AddedItem != null)
+@if (ViewBag.Items.Count > 0)
 {
-    <ul>
-        <li>@(ViewBag.AddedItem)</li>
+<ul>
+    @foreach (string item in ViewBag.Items)
+    {
+        <li>@(item)</li>
 
-    </ul>
+    }
+
+</ul>
 }
