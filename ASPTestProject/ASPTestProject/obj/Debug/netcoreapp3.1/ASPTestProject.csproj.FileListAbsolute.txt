@@ -109,3 +109,4 @@ C:\Users\hamee\source\repos\CSharpASP\ASPTestProject\ASPTestProject\obj\Debug\ne
 C:\Users\hamee\source\repos\CSharpASP\ASPTestProject\ASPTestProject\obj\Debug\netcoreapp3.1\ASPTestProject.csproj.CoreCompileInputs.cache
 C:\Users\hamee\source\repos\CSharpASP\ASPTestProject\ASPTestProject\obj\Debug\netcoreapp3.1\ASPTestProject.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\hamee\source\repos\CSharpASP\ASPTestProject\ASPTestProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\TestPage.cshtml.g.cs
+C:\Users\hamee\source\repos\CSharpASP\ASPTestProject\ASPTestProject\obj\Debug\netcoreapp3.1\Razor\Views\Person\Management.cshtml.g.cs
