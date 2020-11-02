@@ -13,7 +13,14 @@
     <input type="submit" value="Submit" />
 </form>
 
-<ul>
+<!-- This is an HTML Comment - I Hate it -->
+@*
+*   This is a C# Razor comment. I like it. It's HIDDEN from the user, and won't show up in DOM (via inspect element)
+*@
+@if (ViewBag.AddedItem != null)
+{
+    <ul>
+        <li>@(ViewBag.AddedItem)</li>
 
-
-</ul>
+    </ul>
+}

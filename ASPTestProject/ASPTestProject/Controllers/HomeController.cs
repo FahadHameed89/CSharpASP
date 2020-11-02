@@ -40,6 +40,10 @@ namespace ASPTestProject.Controllers
 
         public IActionResult TestPage(string item)
         {
+            if (item != null)
+            {
+                ViewBag.AddedItem = item;
+            }
             return View();
         }
 
