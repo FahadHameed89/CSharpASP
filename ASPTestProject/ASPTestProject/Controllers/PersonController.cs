@@ -31,7 +31,7 @@ namespace ASPTestProject.Controllers
         {
             Debug.WriteLine($"DATA - Create Person");
 
-            CreatePerson(firstName, lastName);
+
             return RedirectToAction("Management");
         }
 
@@ -39,34 +39,17 @@ namespace ASPTestProject.Controllers
         {
             Debug.WriteLine($"DATA - Delete Person {firstName}");
 
-            DeletePersonByFirstName(firstName);
             return RedirectToAction("Management");
         }
 
-        public static List<Person> People = new List<Person>();
+        public static List<Book> People = new List<Book>();
 
         // These methods are for data management. The body of the methods will be replaced with EF code tomorrow, but  for now we're just using a static list. 
-        public void CreatePerson(string firstName, string lastName)
-        {
-            Debug.WriteLine($"DATA - CreatePerson({firstName}, {lastName})");
-            People.Add(new Person()
-            {
-                FirstName = firstName.Trim(),
-                LastName = lastName.Trim()
-            }
-                );
-        }
 
-        public void DeletePersonByFirstName(string firstName)
-        {
-            People.Remove(GetPersonByFirstName(firstName));
-        }
 
-        public Person GetPersonByFirstName(string firstName)
-        {
-            // This ensures nobody's name is duplicated. IF so, it will return null.
-            return People.Where(x => x.FirstName.Trim().ToUpper() == firstName.Trim().ToUpper()).SingleOrDefault();
-        }
+
+
+
 
     }
 }
