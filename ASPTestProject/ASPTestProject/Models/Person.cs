@@ -9,12 +9,12 @@ namespace ASPTestProject.Models
     // In-class practice: Fill out the manufacturer class to function as a basic model. Foreign key stuff not needed.
 
     // Challenge: Implement the foreign key.
-    [Table("manufacturer")]
-    class Manufacturer
+    [Table("person")]
+    class Person
     {
-        public Manufacturer()
+        public Person()
         {
-            Vehicles = new HashSet<Vehicle>();
+            EMailAddresses = new HashSet<EMailAddress>();
         }
 
         [Key]
@@ -23,9 +23,15 @@ namespace ASPTestProject.Models
         public int ID { get; set; }
 
         [Column(TypeName = "varchar(30)")]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
 
-        [InverseProperty(nameof(Models.Vehicle.Manufacturer))]
-        public virtual ICollection<Vehicle> Vehicles { get; set; }
+        [Column(TypeName = "varchar(30)")]
+        public string LastName { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime DateoOfBirth { get; set; }
+
+        [InverseProperty(nameof(Models.EMailAddress.Person))]
+        public virtual ICollection<EMailAddress> EMailAddresses { get; set; }
     }
 }

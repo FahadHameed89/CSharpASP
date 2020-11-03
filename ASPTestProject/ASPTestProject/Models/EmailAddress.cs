@@ -6,8 +6,8 @@ using System.Text;
 
 namespace ASPTestProject.Models
 {
-    [Table("vehicle")]
-    class Vehicle
+    [Table("emailaddress")]
+    class EMailAddress
     {
         [Key]
         [Column(TypeName = "int(10)")]
@@ -15,19 +15,13 @@ namespace ASPTestProject.Models
         public int ID { get; set; }
 
         [Column(TypeName = "int(10)")]
-        public int ManufacturerID { get; set; }
+        public int PersonID { get; set; }
 
-        [Column(TypeName = "varchar(30)")]
-        public string Model { get; set; }
+        [Column(TypeName = "varchar(40)")]
+        public string Address { get; set; }
 
-        [Column(TypeName = "int(10)")]
-        public int ModelYear { get; set; }
-
-        [Column(TypeName = "varchar(30)")]
-        public string Colour { get; set; }
-
-        [ForeignKey(nameof(ManufacturerID))]
-        [InverseProperty(nameof(Models.Manufacturer.Vehicles))]
-        public virtual Manufacturer Manufacturer { get; set; }
+        [ForeignKey(nameof(PersonID))]
+        [InverseProperty(nameof(Models.Person.EMailAddresses))]
+        public virtual Person Person { get; set; }
     }
 }
