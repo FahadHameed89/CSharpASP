@@ -7,7 +7,7 @@ using System.Text;
 namespace ASPTestProject.Models
 {
     [Table("emailaddress")]
-    class EMailAddress
+   public class EMailAddress
     {
         [Key]
         [Column(TypeName = "int(10)")]
